@@ -1,0 +1,72 @@
+{% extends "layouts/base-fullscreen.html" %}
+
+{% block title %} Model {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="content">
+    <div class="container">
+        <div class="row pt-5">
+            <div class="col-md-6 mt-5 offset-md-3 pt-5 mt-5">
+                <div class="card">
+                    <div class="card-header text-center py-4">
+                        <h4 class="title">Argon v2</h4>
+
+                        <h6 class="card-category">
+                            {% if msg %}
+                              <span class="text-danger">{{ msg | safe }}</span>
+                            {% endif %}  
+                        </h6>
+                    </div>
+                    
+                    <div class="card-body px-5 py-3">
+                        <form method="POST">
+                            <div class="row">
+                                <div class="col-md-12 px-md-1">
+                                    <div class="form-group">
+                                        <label>Ticker</label>
+                                        <input type="text" class="form-control" name="Ticker" value="AMZN">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 px-md-1">
+                                    <div class="form-group">
+                                        <label>Model</label>
+                                        <input type="text" class="form-control" name="Model" value="MACD">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 px-md-1">
+                                    <div class="form-group">
+                                        <label>Optimize</label><br>
+                                        <label class="col-md-1">
+                                            <input type="checkbox" class="custom-control-label" name="Optimize" value="on" checked>
+                                        </label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-fill btn-primary" value="Submit">Run</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <br /><br />
+
+                        <p>
+                            Learn more about the<a href="/about.html" class="text-primary">Model</a>?
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
